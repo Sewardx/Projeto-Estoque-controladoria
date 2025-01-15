@@ -1,10 +1,10 @@
 {
     "window.zoomLevel": 2,
-    "editor.fontSize": 24,
+    "editor.fontSize": 10,
     "editor.hover.enabled": true,
     "workbench.startupEditor": "none",
     "explorer.compactFolders": false,
-    "terminal.integrated.fontSize": 24,
+    "terminal.integrated.fontSize": 10,
     "editor.rulers": [80, 120],
     "workbench.colorTheme": "OM Theme (Default Dracula Italic)",
     "workbench.iconTheme": "material-icon-theme",
