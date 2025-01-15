@@ -1,0 +1,256 @@
+body {
+    background-image: url('/static/chamados/img/bgimg.jpg');
+    background-size: cover; /* Ajusta a imagem para cobrir todo o fundo */
+    background-repeat: no-repeat; /* Evita repetição */
+    background-attachment: fixed; /* Fixa o fundo na tela */
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+header {
+    padding: 20px;    
+    max-width: 800px;
+    margin: 0 auto;
+    backdrop-filter: blur(13px) saturate(10%);
+    -webkit-backdrop-filter: blur(13px) saturate(40%);
+    background-color: rgba(10, 10, 10, 0.25);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
+    margin-bottom: 2px;
+    text-shadow: 2px 1px 0px rgba(0,0,0,0.14);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+}
+
+footer {
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    backdrop-filter: blur(13px) saturate(10%);
+    -webkit-backdrop-filter: blur(13px) saturate(40%);
+    background-color: rgba(10, 10, 10, 0.25);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    margin-top: 5px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+}
+
+main {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    backdrop-filter: blur(13px) saturate(10%);
+    -webkit-backdrop-filter: blur(13px) saturate(40%);
+    background-color: rgba(10, 10, 10, 0.25);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
+    text-shadow: 2px 1px 0px rgba(0,0,0,0.14);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+}
+
+main h2 {
+    color: #ffffff; /* Azul para o título */
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+main form {
+    margin-top: 20px;
+}
+
+form label {    
+    color: #ffffff;
+    font-weight: 100;
+    margin-bottom: 5px; /* Adiciona espaço entre a label e o input */
+    display: block; /* Garante que a label ocupe uma linha inteira */
+}
+
+form input, form select, form textarea {
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 1rem;
+    margin-bottom: 15px;
+    color: #000000;
+}
+
+form button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button.btn-success {
+    background-color: #28a745;
+    color: white;
+}
+
+form button.btn-success:hover {
+    background-color: #218838;
+}
+
+form button.btn-secondary {
+    background-color: #ff0000;
+    color: white;
+}
+
+form button.btn-secondary:hover {
+    background-color: #6b0606;
+}
+
+footer small {
+    font-size: 0.9rem;
+}
+
+h1, h2, h3, h4, h5, h6 {    
+    color: #ffffff;
+}
+
+p {
+    color: #ffffff;
+    font-size: 1rem;
+    text-shadow: 2px 1px 0px rgba(0,0,0,0.14);
+}
+
+button {
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+input {
+    font-family: "Montserrat", sans-serif;
+    width: 100%;
+    height: 45px;
+    padding-left: 2.5rem;
+    box-shadow: 0 0 0 1.5px #2b2c37, 0 0 25px -17px #000;
+    border: 0;
+    border-radius: 12px;
+    background-color: #06070852;
+    outline: none;
+    color: #fffdfd !important;
+    transition: all 0.25s cubic-bezier(0.19, 1, 0.22, 1);
+    cursor: text;
+    z-index: 0;
+  }
+  
+  input::placeholder {
+    color: #fffcfc75;
+  }
+  
+  input:hover {
+    box-shadow: 0 0 0 2.5px #2f303d, 0px 0px 25px -15px #000;
+    color: #ffffffb6 !important;
+  }
+  
+  input:active {
+    transform: scale(0.95);
+    color: #fafafa;
+  }
+  
+  input:focus {
+    box-shadow: 0 0 0 2.5px #2f303d;
+    color: #fafafa;
+  }
+
+
+select {
+    background-color: #333; /* Fundo escuro */
+    color: #ffffff !important; /* Texto branco */
+    border: 1px solid #ccc; /* Borda sutil */
+    padding: 8px; /* Espaçamento interno */
+    border-radius: 4px; /* Bordas arredondadas */
+    appearance: none; /* Remove o estilo padrão do navegador */
+    -webkit-appearance: none; /* Remove estilo no Webkit (Safari, Chrome) */
+    -moz-appearance: none; /* Remove estilo no Firefox */
+    transition: all 0.3s ease; /* Transição suave entre estados */
+}
+
+select:focus {
+    background-color: #444; /* Fundo ao receber foco */
+    color: #ffffff; /* Garante que o texto continue branco */
+    outline: none; /* Remove o contorno padrão */
+    border-color: #080808; /* Borda azul ao focar */
+}
+
+select:hover {
+    background-color: #444; /* Fundo mais claro ao passar o mouse */
+    color: #ffffffaf !important; /* Texto continua branco */
+}
+
+select option {
+    background-color: #333; /* Fundo das opções */
+    color: #ffffff; /* Texto das opções */
+}
+
+textarea {
+    background-color: #333; /* Fundo escuro */
+    color: #ffffff !important; /* Texto branco */
+    border: 1px solid #ccc; /* Borda sutil */
+    padding: 8px; /* Espaçamento interno */
+    border-radius: 4px; /* Bordas arredondadas */
+    resize: vertical; /* Permite redimensionar apenas na vertical */
+    transition: all 0.3s ease; /* Transição suave entre estados */
+    font-family: 'Arial', sans-serif; /* Ajuste de fonte */
+    font-size: 14px; /* Ajuste de tamanho da fonte */
+}
+
+textarea:focus {
+    background-color: #444; /* Fundo ao receber foco */
+    color: #ffffff; /* Garante que o texto continue branco */
+    outline: none; /* Remove o contorno padrão */
+    border-color: #000000; /* Borda azul ao focar */
+}
+
+textarea::placeholder {
+    color: #aaaaaa; /* Cor do placeholder */
+    opacity: 1; /* Garante visibilidade */
+}
+
+
+/* aqui e o input antigo */
+
+/* input:invalid, select:invalid, textarea:invalid {
+    border-color: #cacaca; /* Vermelho */ /*
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: #f9fd0d;
+    box-shadow: 0 0 4px rgba(187, 189, 180, 0.5);
+}
+
+/* AQUI ABAIXO É O HEADER E O LOGO */
+
+.header-container {
+    display: flex; /* Ativa o layout flexível */
+    align-items: center; /* Alinha verticalmente os itens no centro */
+    justify-content: space-between; /* Posiciona textos à esquerda e logotipo à direita */
+}
+
+.text-container {
+    flex: 1; /* Garante que os textos ocupem o espaço disponível */
+}
+
+.logo {
+    max-width: 120px; /* Ajuste o tamanho do logotipo */
+    max-height: 120px;
+    object-fit: contain; /* Garante que a imagem não deforme */
+    margin-left: 10px; /* Espaço entre textos e o logotipo */
+    margin-bottom: 70px;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    border: 1px solid rgba(48, 45, 45, 0.781); /* Borda prateada */
+    border-radius: 2px; /* Bordas levemente arredondadas (opcional) */
+}

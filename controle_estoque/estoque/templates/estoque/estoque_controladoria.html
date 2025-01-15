@@ -1,0 +1,129 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de Estoque</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Select2 CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.1.0-rc.0/css/select2.min.css" rel="stylesheet">
+    <!-- Animate.css for additional animations -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <!-- CSS Personalizado -->
+    <link rel="stylesheet" href="{% static 'estoque/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'estoque/css/modal.css' %}">
+</head>
+<body>
+    <header class="glassmorphic-header">
+        <div class="container animate__animated animate__fadeInDown">
+            <h1 class="h3">REQUISIÇÃO DE MATERIAIS DE ESCRITÓRIO</h1>
+            <p>Selecione os materiais que deseja requisitar ao departamento de controladoria 😊</p>
+        </div>
+    </header>
+    <div id="successModal" class="modal-overlay">
+        <div class="modal-content glassmorphic animate__animated animate__bounceIn">
+            <div class="modal-header">
+                <h2>Requisição Enviada</h2>
+                <button id="closeModal" class="close-btn">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Sua requisição de materiais foi enviada com sucesso!</p>
+                <p>Você receberá uma confirmação por email em breve.</p>
+            </div>
+            <div class="modal-footer">
+                <button id="okButton" class="btn btn-success glassmorphic-button">OK</button>
+            </div>
+        </div>
+    </div>
+    <main class="container my-5">
+        <form method="post" id="requisicao-form" class="glassmorphic" action="{% url 'estoque:requisicao_material' %}">
+            {% csrf_token %}
+            <!-- Campos ocultos -->
+            <input type="hidden" id="materials" name="materials">
+            <input type="hidden" id="quantidades" name="quantidades">
+
+            <div class="row mb-3">
+                <div class="col-md-4">
+                    <label for="nome-completo" class="form-label">Nome completo</label>
+                    <input type="text" id="nome-completo" name="nome_completo" class="form-control glassmorphic-input" required>
+                </div>
+                <div class="col-md-4">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" id="email" name="email" class="form-control glassmorphic-input" required>
+                </div>
+                <div class="col-md-4">
+                    <label for="departamento" class="form-label">Departamento</label>
+                    <select id="departamento" name="departamento" class="form-select glassmorphic-select" required>
+                        <option value="">Selecione o departamento</option>
+                        <option value="Tecnologia">Tecnologia</option>
+                        <option value="Recepção">Recepção</option>
+                        <option value="Diretoria">Diretoria</option>
+                        <option value="Departamento Pessoal">Departamento Pessoal</option>
+                        <option value="Financeiro">Financeiro</option>
+                        <option value="Contabilidade">Contabilidade</option>
+                        <option value="Contratos">Contratos</option>
+                        <option value="Consórcios">Consórcios</option>
+                        <option value="Controladoria">Controladoria</option>
+                        <option value="Jurídico">Jurídico</option>
+                        <option value="Licitação">Licitação</option>
+                        <option value="Segurança do Trabalho">Segurança do Trabalho</option>
+                        <option value="Obras">Obras</option>
+                        <option value="Equipes">Equipes</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label for="material-select" class="form-label">Material</label>
+                    <select id="material-select" class="form-select glassmorphic-select">
+                        <option value="">Selecione um material</option>
+                        <!-- Os materiais serão carregados dinamicamente -->
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <label for="quantidade" class="form-label">Quantidade</label>
+                    <input type="number" id="quantidade" class="form-control glassmorphic-input" min="1" placeholder="Digite a quantidade">
+                </div>
+                <div class="col-md-3 d-flex align-items-end">
+                    <button type="button" id="add-material" class="btn btn-secondary glassmorphic-button w-100">Adicionar Material</button>
+                </div>
+            </div>
+
+            <h2 class="h4 mb-3">Materiais Selecionados</h2>
+            <table class="table glassmorphic-table">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Tipo</th>
+                        <th>Quantidade</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="materials-table-body">
+                    <!-- Os materiais serão adicionados dinamicamente -->
+                </tbody>
+            </table>
+
+            <button type="submit" class="btn btn-success glassmorphic-button">Enviar Requisição</button>
+        </form>
+    </main>
+
+    <footer class="glassmorphic-footer">
+        <div class="container">
+            <small>&copy; 2024 - Controladoria ERA TÉCNICA ENGENHARIA</small>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <!-- Select2 JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.1.0-rc.0/js/select2.min.js"></script>
+    <!-- JavaScript Personalizado -->
+    <script src="{% static 'estoque/js/estoque.js' %}"></script>
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
